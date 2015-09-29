@@ -26,10 +26,12 @@ textAngular.run([function(){
 		if(!window.rangy){
 			throw("rangy-core.js and rangy-selectionsaverestore.js are required for textAngular to work correctly, rangy-core is not yet loaded.");
 		}else{
-			window.rangy.init();
-			if(!window.rangy.saveSelection){
-				throw("rangy-selectionsaverestore.js is required for textAngular to work correctly.");
-			}
+			setTimeout(function() {
+				window.rangy.init();
+				if(!window.rangy.saveSelection){
+					throw("rangy-selectionsaverestore.js is required for textAngular to work correctly.");
+				}
+			});
 		}
 	}
 }]);
